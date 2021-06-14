@@ -10,7 +10,7 @@ Upon logging in, a user will be able to see a list of his or her invited and joi
 #### **Login Page**
 A user will be able to log in or register for an account. Passwords will of course be hashed and salted.
 
-#### Choose Campaign Page
+#### *Choose Campaign Page*
 A user will first land on a page listing campaigns to which they have access, and which they may select. If the user is the admin for the campaign that he or she selects, the user is then taken to the Creator page. Otherwise, the user is taken to the Map/Navigation page.
 
 #### Creator Page
