@@ -49,7 +49,7 @@ I will be using MongoDB for my backend. There will be a schema each for Items, M
 - Map: Image file
 - Game: Game
 
-#### *User OBject*
+#### *User Object*
 - Username: String
 - Password: Hashed and Salted
 - VisibileTag: String
