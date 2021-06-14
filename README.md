@@ -1,0 +1,1 @@
+# ripnotes.adamtayler.com
