@@ -20,7 +20,7 @@ An admin for a campaign manages that campaign from the Creator page. The admin m
 Any user on the map page will be able to see the map shown to that user by the admin. The Character Sheet page and Choose Campaign page can be reached from the Map page, as can the Creator page for the game admin.
 
 #### *Character Page*
-A user on the Character page will see the stats, attributes, and equipment for the character they are role-playing. They may make changes to their stats, attributes, and equipment on this page. This will likely be the most difficult part of the project. The Map page and Choose Campaign page can be reached from the Map page, as can the Creator page for the game admin.
+A user on the Character page will see the stats, attributes, and equipment for the character they are role-playing. They may make changes to their stats, attributes, and equipment on this page. This will likely be the most difficult part of the project. The Map page and Choose Campaign page can be reached from the Character Sheet page, as can the Creator page for the game admin.
 
 ### Front-end Implementation
 I will be using the Vue CLI with Vue Router for my front-end display and navigation.
