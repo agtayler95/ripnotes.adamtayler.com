@@ -28,18 +28,31 @@ I will be using the Vue CLI with Vue Router for my front-end display and navigat
 ### Back-end Implementation
 I will be using MongoDB for my backend. There will be a schema each for Items, Maps, Users, and Games.
 
-#### *Games Object*
-- Name
-- Creator
-- Created
-- Players
-- Maps
-- Items
-- Default_Character
+#### *Game Object*
+- Name: String
+- Creator: User
+- Created: Date
+- Players: Array of User
+- Default_Character: Json object with Attribute/Value pairs (to be used as default during character creation)
 
-#### *Items Object*
+#### *Item Object*
+- Name: String
+- Type: String (Weapon, Armor, etc)
+- Attributes: Json object with Attribute/Value pairs
+- Restrictions: Json object with Attribute/Value pairs
+- Damage: String
+- Additional_Notes: String
+- Game: Game
 
+#### *Map Object*
+- Name: String
+- Map: Image file
+- Game: Game
 
+#### *User OBject*
+- Username: String
+- Password: Hashed and Salted
+- VisibileTag: String
 
 
 ## Advanced Features
