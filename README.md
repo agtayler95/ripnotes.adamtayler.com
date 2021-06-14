@@ -7,7 +7,7 @@ Allow users to role-play remotely with minimum interruptions for terrain descrip
 ### User Experience
 Upon logging in, a user will be able to see a list of his or her invited and joined games. The user will be able to select a game and navigate between views to manage their character or view the current map. Admins will be additionally be able to add maps and to decide which map each character should currently be viewing.
 
-#### Login Page
+#### **Login Page**
 A user will be able to log in or register for an account. Passwords will of course be hashed and salted.
 
 #### Choose Campaign Page
