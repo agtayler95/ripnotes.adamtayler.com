@@ -54,6 +54,13 @@ I will be using MongoDB for my backend. There will be a schema each for Items, M
 - Password: Hashed and Salted
 - VisibileTag: String
 
+#### *Character Object*
+- Name: String
+- ImagePath: String
+- Owner: User
+- Game: Game
+- Items: Array of items
+- Attributes: Array of attribute/value pairs
 
 ## Advanced Features
 If I have time, I would like to enhance the map/navigation page to allow users themselves to advance to new maps along routes designated by the admin. I would also like to add draggable pins to represent the locations of entities on the map. Finally, I would like include the option for admins to allow users to see each other's character sheets.
