@@ -1,15 +1,18 @@
 <template>
   <div id="app">
-    <div v-if="user" userid="nav">
-      <router-link v-if="currentGame" to="/">Home | </router-link>
-      <router-link v-if="currentGame" to="/character">Character Sheet | </router-link>
-      <router-link v-if="currentGame" to="/map">Map | </router-link>
-      <a v-if="user.tagname" style="cursor: pointer" class="clickable" @click="logout">{{user.tagname}} (Logout)</a>
-      <a v-else class="clickable" style="cursor: pointer" @click="logout">{{user.firstname}} {{user.lastname}} (Logout)</a>
+    <div id="content">
+      <div v-if="user" userid="nav">
+        <router-link v-if="currentGame" to="/">Home | </router-link>
+        <router-link v-if="currentGame" to="/character">Character Sheet | </router-link>
+        <router-link v-if="currentGame" to="/map">Map | </router-link>
+        <a v-if="user.tagname" style="cursor: pointer" class="clickable" @click="logout">{{user.tagname}} (Logout)</a>
+        <a v-else class="clickable" style="cursor: pointer" @click="logout">{{user.firstname}} {{user.lastname}} (Logout)</a>
+      </div>
+      <router-view/>
     </div>
-    <router-view/>
     <footer id="footer">
-      <hr/><p class="footer-link">GitHub Repository: <a href="https://github.com/agtayler95/ripnotes.adamtayler.com" style="text-decoration: none" target="_blank">https://github.com/agtayler95/ripnotes.adamtayler.com</a></p>
+      <hr>
+      <p class="footer-link"> <strong>20 Hours Spent.</strong>  |  GitHub Repository: <a href="https://github.com/agtayler95/ripnotes.adamtayler.com" style="text-decoration: none" target="_blank">https://github.com/agtayler95/ripnotes.adamtayler.com</a></p>
     </footer>
   </div>
 </template>
@@ -66,6 +69,9 @@ body {
   text-align: center;
 }
 
+#content {
+  margin-bottom: 80px;
+}
 
 #header {
   /* Semi-circle */
@@ -103,6 +109,8 @@ h2 {
   color: #fff;
   width: 50px;
 }
+
+
 
 .pure-button-primary {
   background-color: #277E8E;
