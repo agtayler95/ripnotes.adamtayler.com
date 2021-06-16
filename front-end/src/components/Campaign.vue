@@ -8,9 +8,9 @@
     <p></p>
     <a v-if="isCreator" style="cursor: pointer" class="clickable" @click="deleteCampaign">Delete Campaign</a>
   </div>
-  <div class="description">
+  <div >
     <img class="thumbnail" :src="game.thumbnail" />
-    <p>{{game.description}}</p>
+    <p class="description">{{game.description}}</p>
   </div>
 </div>
 </template>
@@ -23,7 +23,8 @@ export default{
     return {
       isCreator: false,
       notCreator: true,
-      game: null
+      game: null,
+      error: null
     }
   },
   created() {
@@ -36,9 +37,14 @@ export default{
     },
     async leaveCampaign(){
       let confirmed = window.confirm("Are you sure you want to leave the campaign? The creator would need to invite you again if you were to change your mind.");
-      if (confirmed)
-        await axios.put("api/games/playerResponse/" + this.game._id, {
-          accepted: "declined"});
+      if (confirmed) {
+        try {
+          await axios.put("api/games/playerResponse/" + this.game._id, {
+            accepted: "declined"});
+          } catch(error) {
+            this.error = error.response.data.message;
+          }
+        }
       this.$root.$data.currentGame = null;
     },
     checkIfCreator(){
@@ -75,10 +81,11 @@ export default{
 }
 
 .description {
-  margin: 70px;
+  margin: 0;
 }
 
 .thumbnail {
-  width: 100%;
+  height: 100%;
+  width: 80%;
 }
 </style>
