@@ -8,6 +8,9 @@
       <a v-else class="clickable" style="cursor: pointer" @click="logout">{{user.firstname}} {{user.lastname}} (Logout)</a>
     </div>
     <router-view/>
+    <footer id="footer">
+      <hr/><p class="footer-link">GitHub Repository: <a href="https://github.com/agtayler95/ripnotes.adamtayler.com" style="text-decoration: none" target="_blank">https://github.com/agtayler95/ripnotes.adamtayler.com</a></p>
+    </footer>
   </div>
 </template>
 
@@ -54,10 +57,13 @@ body {
 
 
 #footer {
-  position: relative;
-  top: 150px;
+  position: fixed;
+  left: 0;
+  bottom: 0;
   width: 100%;
-  height: 2.5rem;            /* Footer height */
+  background-color: #bd564d;
+  color: white;
+  text-align: center;
 }
 
 
