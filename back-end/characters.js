@@ -1,8 +1,15 @@
 const express = require("express");
 const mongoose = require('mongoose');
-const argon2 = require("argon2");
-
 const router = express.Router();
+
+const users = require("./users.js");
+const User = users.model;
+
+const items = require("./items.js");
+const Item = items.model;
+
+const games = require("./games.js");
+const Game = games.model;
 
 const characterSchema = new mongoose.Schema({
   name: String,
@@ -15,15 +22,14 @@ const characterSchema = new mongoose.Schema({
     type: mongoose.Schema.ObjectId,
     ref: 'Game'
   },
-  items: [{item: {type: mongoose.Schema.ObjectID,
+  items: [{carriedItem: {type: mongoose.Schema.ObjectId,
                   ref: 'Item'}, equipped: Boolean}],
   attributes: [{attributeName: String, modifier: Number}],
-
 });
 
-const Item = mongoose.model('Item', itemSchema);
+const Character = mongoose.model('Character', characterSchema);
 
 module.exports = {
   routes: router,
-  model: Item,
+  model: Character,
 };

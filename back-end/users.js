@@ -1,10 +1,11 @@
 const express = require("express");
 const mongoose = require('mongoose');
 const argon2 = require("argon2");
-
 const router = express.Router();
 
 const userSchema = new mongoose.Schema({
+  firstname: String,
+  lastname: String,
   username: String,
   password: String,
   tagname: String
@@ -67,9 +68,9 @@ const validUser = async (req, res, next) => {
 // create a new user
 router.post('/', async (req, res) => {
 
-  if (!req.body.username || !req.body.password)
+  if (!req.body.firstname || !req.body.lastname || !req.body.username || !req.body.password)
     return res.status(400).send({
-      message: "username and password are required"
+      message: "name, username and password are required"
     });
 
   try {
@@ -86,6 +87,8 @@ router.post('/', async (req, res) => {
 
     // create a new user and save it to the database
     const user = new User({
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
       username: req.body.username,
       password: req.body.password,
       tagname: req.body.tagname

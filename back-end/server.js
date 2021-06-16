@@ -32,6 +32,10 @@ app.use(cookieSession({
 }));
 
 // import the users module and setup its API path
+
+const characters = require("./characters.js");
+app.use("/api/characters", characters.routes);
+
 const users = require("./users.js");
 app.use("/api/users", users.routes);
 
@@ -43,8 +47,5 @@ app.use("/api/items", items.routes);
 
 const games = require("./games.js");
 app.use("/api/games", games.routes);
-
-const games = require("./characters.js");
-app.use("/api/characters", characters.routes);
 
 app.listen(3002, () => console.log('Server listening on port 3002!'));
